@@ -1,10 +1,10 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-ctx.strokeStyle = '#28d1fa';
+ctx.strokeStyle = '#1277F6';
 ctx.lineWidth = 17;
 ctx.lineCap = 'round';
 ctx.shadowBlur = 15;
-ctx.shadowColor = '#28d1fa';
+ctx.shadowColor = '#1277F6';
 
 function degToRad(degree) {
   var factor = Math.PI/180;
@@ -24,7 +24,11 @@ function renderTime() {
   var newSeconds = seconds+(milliseconds/1000);
 
   // Background
-  ctx.fillStyle = '#333';
+  gradient = ctx.createRadialGradient(250,250,5,250,250,300);
+  gradient.addColorStop(0,'#051F40');
+  gradient.addColorStop(1, '#000');
+  ctx.fillStyle = gradient;
+  // ctx.fillStyle = '#333';
   ctx.fillRect(0,0,500,500);
 
   // Hours
@@ -45,13 +49,13 @@ function renderTime() {
 
   // Date
   ctx.font = "25px Avenir";
-  ctx.fillStyle = '#28d1fa';
+  ctx.fillStyle = '#E0CAB1';
   ctx.fillText(today, 155, 250);
 
 
   // Time
   ctx.font = "15px Avenir";
-  ctx.fillStyle = '#28d1fa';
+  ctx.fillStyle = '#E0CAB1';
   ctx.fillText(time, 155, 280);
 }
 

@@ -26,10 +26,15 @@ function renderTime() {
   ctx.stroke();
 
   // Minutes
+  ctx.beginPath();
+  ctx.arc(250,250,170,degToRad(270),degToRad((minutes*6)-90));
+  ctx.stroke();
 
 
   // Seconds
-
+  ctx.beginPath();
+  ctx.arc(250,250,140,degToRad(270),degToRad((seconds*6)-90));
+  ctx.stroke();
 
   // Date
 
